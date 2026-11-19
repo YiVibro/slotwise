@@ -5,6 +5,7 @@ import helmet from "helmet";
 import routes from "./routes/index.js";
 import { notFoundMiddleware } from "./middleware/not-found.middleware.js";
 import { errorMiddleware } from "./middleware/error.middleware.js";
+import { env } from "./config/env.js";
 
 const app = express();
 
@@ -12,7 +13,7 @@ app.use(helmet());
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: env.CORS_ORIGIN,
   }),
 );
 

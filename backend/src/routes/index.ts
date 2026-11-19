@@ -1,4 +1,4 @@
-import { Router } from "express";
+﻿import { Router } from "express";
 
 import availabilityRoutes from "./availability.routes.js";
 import bookingRoutes from "./booking.routes.js";
@@ -9,7 +9,7 @@ const router = Router();
 router.get("/health", (_req, res) => {
   res.json({
     status: "ok",
-    service: "codeyoung-booking-api",
+    service: "slotwise-booking-api",
   });
 });
 

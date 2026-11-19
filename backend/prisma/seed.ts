@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client";
+﻿import { PrismaClient } from "@prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { Pool } from "pg";
 import "dotenv/config";
@@ -11,28 +11,28 @@ const prisma = new PrismaClient({ adapter });
 const mentorConfigs = [
   {
     name: "Mentor 1",
-    email: "mentor1@codeyoung.local",
+    email: "mentor1@slotwise.local",
     timezone: "Asia/Kolkata",
     startTime: "09:00",
     endTime: "21:00",
   },
   {
     name: "Mentor 2",
-    email: "mentor2@codeyoung.local",
+    email: "mentor2@slotwise.local",
     timezone: "Asia/Kolkata",
     startTime: "09:00",
     endTime: "21:00",
   },
   {
     name: "Mentor 3",
-    email: "mentor3@codeyoung.local",
+    email: "mentor3@slotwise.local",
     timezone: "Asia/Kolkata",
     startTime: "09:00",
     endTime: "21:00",
   },
   {
     name: "Mentor 4",
-    email: "mentor4@codeyoung.local",
+    email: "mentor4@slotwise.local",
     timezone: "Asia/Kolkata",
     startTime: "09:00",
     endTime: "21:00",
@@ -40,21 +40,21 @@ const mentorConfigs = [
 
   {
     name: "Mentor 5",
-    email: "mentor5@codeyoung.local",
+    email: "mentor5@slotwise.local",
     timezone: "Europe/London",
     startTime: "09:00",
     endTime: "17:00",
   },
   {
     name: "Mentor 6",
-    email: "mentor6@codeyoung.local",
+    email: "mentor6@slotwise.local",
     timezone: "Europe/London",
     startTime: "09:00",
     endTime: "17:00",
   },
   {
     name: "Mentor 7",
-    email: "mentor7@codeyoung.local",
+    email: "mentor7@slotwise.local",
     timezone: "Europe/London",
     startTime: "09:00",
     endTime: "17:00",
@@ -62,21 +62,21 @@ const mentorConfigs = [
 
   {
     name: "Mentor 8",
-    email: "mentor8@codeyoung.local",
+    email: "mentor8@slotwise.local",
     timezone: "America/New_York",
     startTime: "09:00",
     endTime: "17:00",
   },
   {
     name: "Mentor 9",
-    email: "mentor9@codeyoung.local",
+    email: "mentor9@slotwise.local",
     timezone: "America/New_York",
     startTime: "09:00",
     endTime: "17:00",
   },
   {
     name: "Mentor 10",
-    email: "mentor10@codeyoung.local",
+    email: "mentor10@slotwise.local",
     timezone: "America/New_York",
     startTime: "09:00",
     endTime: "17:00",

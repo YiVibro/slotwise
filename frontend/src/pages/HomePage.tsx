@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 
 function HomePage() {
   return (
@@ -23,22 +23,22 @@ function HomePage() {
 
           <div className="hero-actions">
             <Link to="/book" className="hero-button">
-              Book a FREE trial <span>→</span>
+              Book a FREE trial <span>â†’</span>
             </Link>
             <a href="#how-it-works" className="text-button">
-              See how it works <span>↓</span>
+              See how it works <span>â†“</span>
             </a>
           </div>
 
           <div className="trust-row">
             <div className="avatar-stack" aria-hidden="true">
-              <span>👧</span>
-              <span>👦</span>
-              <span>🧒</span>
+              <span>ðŸ‘§</span>
+              <span>ðŸ‘¦</span>
+              <span>ðŸ§’</span>
             </div>
             <div>
               <strong>Made for curious young minds</strong>
-              <span>Simple booking • Personal mentor • Live class</span>
+              <span>Simple booking â€¢ Personal mentor â€¢ Live class</span>
             </div>
           </div>
         </div>
@@ -55,14 +55,14 @@ function HomePage() {
               <div className="code-line" />
             </div>
             <div className="learning-badge">
-              <span>✦</span>
+              <span>âœ¦</span>
               Learning time
               <strong>60 min</strong>
             </div>
           </div>
 
           <div className="floating-card mentor-float">
-            <div className="mini-avatar">👨‍🏫</div>
+            <div className="mini-avatar">ðŸ‘¨â€ðŸ«</div>
             <div>
               <small>Your mentor</small>
               <strong>Ready to teach</strong>
@@ -71,7 +71,7 @@ function HomePage() {
           </div>
 
           <div className="floating-card globe-float">
-            <span className="globe-icon">🌎</span>
+            <span className="globe-icon">ðŸŒŽ</span>
             <div>
               <strong>Your time zone</strong>
               <small>Automatically handled</small>
@@ -88,9 +88,9 @@ function HomePage() {
         <span>Designed around real family schedules</span>
         <div>
           <strong>1:1</strong> mentor matching
-          <strong>•</strong>
+          <strong>â€¢</strong>
           local-time booking
-          <strong>•</strong>
+          <strong>â€¢</strong>
           live trial class
         </div>
       </section>
@@ -107,7 +107,7 @@ function HomePage() {
 
         <div className="feature-grid">
           <article className="feature-card feature-teal">
-            <span className="feature-icon">🎯</span>
+            <span className="feature-icon">ðŸŽ¯</span>
             <h3>Personal attention</h3>
             <p>
               A one-to-one trial class with a mentor assigned to your
@@ -116,7 +116,7 @@ function HomePage() {
           </article>
 
           <article className="feature-card feature-yellow">
-            <span className="feature-icon">🌍</span>
+            <span className="feature-icon">ðŸŒ</span>
             <h3>Your local time</h3>
             <p>
               Pick a comfortable time in your own timezone. We handle
@@ -125,7 +125,7 @@ function HomePage() {
           </article>
 
           <article className="feature-card feature-purple">
-            <span className="feature-icon">⚡</span>
+            <span className="feature-icon">âš¡</span>
             <h3>Quick to book</h3>
             <p>
               Choose a date, find a slot, enter your details and get a
@@ -144,21 +144,21 @@ function HomePage() {
         <div className="steps-grid">
           <article className="step-card">
             <div className="step-number-large">01</div>
-            <span className="step-icon">🗓️</span>
+            <span className="step-icon">ðŸ—“ï¸</span>
             <h3>Choose your time</h3>
             <p>Select your timezone, date and the hours that suit your family.</p>
           </article>
 
           <article className="step-card">
             <div className="step-number-large">02</div>
-            <span className="step-icon">🤝</span>
+            <span className="step-icon">ðŸ¤</span>
             <h3>Meet your mentor</h3>
             <p>We find an available mentor who can take the class at that time.</p>
           </article>
 
           <article className="step-card">
             <div className="step-number-large">03</div>
-            <span className="step-icon">🚀</span>
+            <span className="step-icon">ðŸš€</span>
             <h3>Join the trial</h3>
             <p>Get your class details and dummy live-class link instantly.</p>
           </article>
@@ -169,7 +169,7 @@ function HomePage() {
         <div className="timezone-visual">
           <div className="orbit orbit-one" />
           <div className="orbit orbit-two" />
-          <div className="timezone-core">🌐</div>
+          <div className="timezone-core">ðŸŒ</div>
           <span className="timezone-chip chip-ny">New York</span>
           <span className="timezone-chip chip-london">London</span>
           <span className="timezone-chip chip-india">India</span>
@@ -184,7 +184,7 @@ function HomePage() {
             changes are handled by the booking engine.
           </p>
           <Link to="/book" className="secondary-button">
-            Find a trial slot <span>→</span>
+            Find a trial slot <span>â†’</span>
           </Link>
         </div>
       </section>
@@ -196,14 +196,14 @@ function HomePage() {
           <p>It only takes a few minutes to choose a time and book your trial.</p>
         </div>
         <Link to="/book" className="hero-button">
-          Book a FREE trial <span>→</span>
+          Book a FREE trial <span>â†’</span>
         </Link>
       </section>
 
       <footer className="home-footer">
         <div className="footer-brand">
           <span className="brand-mark">C</span>
-          <strong>CodeYoung</strong>
+          <strong>SlotWise</strong>
         </div>
         <span>Trial Class Booking Experience</span>
       </footer>
@@ -212,3 +212,4 @@ function HomePage() {
 }
 
 export default HomePage;
+

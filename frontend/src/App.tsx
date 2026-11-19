@@ -1,4 +1,4 @@
-import { Link, Route, Routes, useLocation } from "react-router-dom";
+﻿import { Link, Route, Routes, useLocation } from "react-router-dom";
 
 import HomePage from "./pages/HomePage";
 import BookingPage from "./pages/BookingPage";
@@ -12,7 +12,7 @@ function App() {
     <>
       <nav className="navbar">
         <div className="nav-content">
-          <Link to="/" className="brand" aria-label="CodeYoung home">
+          <Link to="/" className="brand" aria-label="SlotWise home">
             <span className="brand-mark">C</span>
             <span>Code<span>Young</span></span>
           </Link>
@@ -38,3 +38,4 @@ function App() {
 }
 
 export default App;
+

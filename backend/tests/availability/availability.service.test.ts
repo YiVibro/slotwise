@@ -1,4 +1,11 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import {
+  afterEach,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  vi,
+} from "vitest";
 
 const mocks = vi.hoisted(() => ({
   findActiveMentors: vi.fn(),
@@ -23,11 +30,20 @@ import { AvailabilityService } from "../../src/services/availability.service.js"
 describe("AvailabilityService", () => {
   const service = new AvailabilityService();
 
-  beforeEach(() => {
-    vi.clearAllMocks();
+beforeEach(() => {
+  vi.useFakeTimers();
 
-    mocks.findConfirmedBookingsForMentorPeriod.mockResolvedValue([]);
-  });
+  // Freeze time so September 28, 2026 remains a future date.
+  vi.setSystemTime(new Date("2026-09-27T12:00:00.000Z"));
+
+  vi.clearAllMocks();
+
+  mocks.findConfirmedBookingsForMentorPeriod.mockResolvedValue([]);
+});
+
+afterEach(() => {
+  vi.useRealTimers();
+});
 
   it("returns only complete slots inside the parent's preferred time range", async () => {
   mocks.findActiveMentors.mockResolvedValue([

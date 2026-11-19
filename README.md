@@ -1,6 +1,6 @@
-# CodeYoung Trial Class Booking System
+﻿# SlotWise - Timezone-Aware Appointment Booking Platform
 
-A full-stack trial-class appointment booking system built for the CodeYoung Full-Stack Development Assignment.
+A full-stack, timezone-aware appointment booking platform built with React, Node.js, Express and PostgreSQL.
 
 The system allows parents to select a preferred date, local time range, and timezone. It finds available one-hour trial-class slots and assigns an available mentor while handling timezone conversion, daylight-saving-time edge cases, mentor daily capacity, overlapping bookings, and concurrent booking requests.
 
@@ -20,8 +20,8 @@ Make sure the following are installed:
 ## 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YiVibro/codeyoung_assignemeet
-cd codeyoung_assignment
+git clone https://github.com/yivibro/codeyoung_assignement
+cd SlotWise
 ```
 
 ## 2. Start PostgreSQL
@@ -39,9 +39,9 @@ docker ps
 
 The project uses:
 ```text
-Database: codeyoung
-Username: codeyoung
-Password: codeyoung_dev_password
+Database: slotwise
+Username: slotwise
+Password: slotwise_local_password
 Port: 5432
 ```
 ## 3. Set Up the Backend
@@ -59,7 +59,7 @@ backend/.env
 ```
 Add:
 ```text
-DATABASE_URL="postgresql://codeyoung:codeyoung_password@localhost:5432/codeyoung?schema=public"
+DATABASE_URL="postgresql://slotwise:slotwise_local_password@localhost:5432/slotwise?schema=public"
 PORT=5000
 ```
 Apply the existing Prisma migrations:
@@ -142,7 +142,7 @@ npm run build
 ### Problem Statement
 
 
-CodeYoung has:
+SlotWise provides:
 
 - 10 mentors
 - Up to 2 trial classes per mentor per day
@@ -260,41 +260,41 @@ Both the parent and mentor should see the class time in their own timezone.
 # 4. Architecture
 
 ```text
-┌─────────────────────────────┐
-│        React Frontend       │
-│                             │
-│  Parent Booking             │
-│  Confirmation               │
-│  Mentor Dashboard           │
-└──────────────┬──────────────┘
-               │ REST / JSON
-               ▼
-┌─────────────────────────────┐
-│      Express API Server     │
-│                             │
-│ Controllers                 │
-│ Validation                  │
-│ Error Handling              │
-└──────────────┬──────────────┘
-               ▼
-┌─────────────────────────────┐
-│          Services           │
-│                             │
-│ Availability Service        │
-│ Booking Service             │
-└──────────────┬──────────────┘
-               ▼
-┌─────────────────────────────┐
-│       Repository Layer      │
-│                             │
-│ Parent Repository           │
-│ Mentor Repository           │
-│ Booking Repository          │
-└──────────────┬──────────────┘
-               ▼
-┌─────────────────────────────┐
-│         PostgreSQL          │
-└─────────────────────────────┘
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚        React Frontend       â”‚
+â”‚                             â”‚
+â”‚  Parent Booking             â”‚
+â”‚  Confirmation               â”‚
+â”‚  Mentor Dashboard           â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+               â”‚ REST / JSON
+               â–¼
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚      Express API Server     â”‚
+â”‚                             â”‚
+â”‚ Controllers                 â”‚
+â”‚ Validation                  â”‚
+â”‚ Error Handling              â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+               â–¼
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚          Services           â”‚
+â”‚                             â”‚
+â”‚ Availability Service        â”‚
+â”‚ Booking Service             â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+               â–¼
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚       Repository Layer      â”‚
+â”‚                             â”‚
+â”‚ Parent Repository           â”‚
+â”‚ Mentor Repository           â”‚
+â”‚ Booking Repository          â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+               â–¼
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚         PostgreSQL          â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 ```
 The application uses a layered backend design so that HTTP handling, business rules, and database operations remain separated.
 
@@ -302,41 +302,41 @@ The application uses a layered backend design so that HTTP handling, business ru
 
 # 5. Project Structure
 ```text
-codeyoung_assignment/
-│
-├── backend/
-│   ├── prisma/
-│   │   ├── migrations/
-│   │   ├── schema.prisma
-│   │   └── seed.ts
-│   │
-│   ├── src/
-│   │   ├── config/
-│   │   ├── controllers/
-│   │   ├── middleware/
-│   │   ├── repositories/
-│   │   ├── routes/
-│   │   ├── schemas/
-│   │   ├── services/
-│   │   ├── scripts/
-│   │   ├── utils/
-│   │   ├── app.ts
-│   │   └── server.ts
-│   │
-│   └── tests/
-│
-├── frontend/
-│   └── src/
-│       ├── api/
-│       ├── components/
-│       ├── pages/
-│       ├── types/
-│       └── utils/
-│
-├── docker-compose.yml
-├── README.md
-├── TRANSCRIPT.md
-└── .gitignore
+SlotWise/
+â”‚
+â”œâ”€â”€ backend/
+â”‚   â”œâ”€â”€ prisma/
+â”‚   â”‚   â”œâ”€â”€ migrations/
+â”‚   â”‚   â”œâ”€â”€ schema.prisma
+â”‚   â”‚   â””â”€â”€ seed.ts
+â”‚   â”‚
+â”‚   â”œâ”€â”€ src/
+â”‚   â”‚   â”œâ”€â”€ config/
+â”‚   â”‚   â”œâ”€â”€ controllers/
+â”‚   â”‚   â”œâ”€â”€ middleware/
+â”‚   â”‚   â”œâ”€â”€ repositories/
+â”‚   â”‚   â”œâ”€â”€ routes/
+â”‚   â”‚   â”œâ”€â”€ schemas/
+â”‚   â”‚   â”œâ”€â”€ services/
+â”‚   â”‚   â”œâ”€â”€ scripts/
+â”‚   â”‚   â”œâ”€â”€ utils/
+â”‚   â”‚   â”œâ”€â”€ app.ts
+â”‚   â”‚   â””â”€â”€ server.ts
+â”‚   â”‚
+â”‚   â””â”€â”€ tests/
+â”‚
+â”œâ”€â”€ frontend/
+â”‚   â””â”€â”€ src/
+â”‚       â”œâ”€â”€ api/
+â”‚       â”œâ”€â”€ components/
+â”‚       â”œâ”€â”€ pages/
+â”‚       â”œâ”€â”€ types/
+â”‚       â””â”€â”€ utils/
+â”‚
+â”œâ”€â”€ docker-compose.yml
+â”œâ”€â”€ README.md
+â”œâ”€â”€ TRANSCRIPT.md
+â””â”€â”€ .gitignore
 ```
 <br>
 
@@ -370,14 +370,14 @@ Display times are converted from UTC into the relevant local timezone.
 Conceptually:
 ```text
 Parent local time
-       │
-       ▼
+       â”‚
+       â–¼
 IANA timezone
-       │
-       ▼
+       â”‚
+       â–¼
       UTC
-       │
-       ▼
+       â”‚
+       â–¼
 Mentor local time
 ```
 This makes the UTC timestamp the canonical representation of the booking.
@@ -449,17 +449,17 @@ The booking endpoint performs the authoritative availability check again because
 The seeded application contains 10 mentors distributed across multiple timezones.
 
 ```text
-Mentors 1–4
+Mentors 1â€“4
 Asia/Kolkata
-09:00–21:00
+09:00â€“21:00
 
-Mentors 5–7
+Mentors 5â€“7
 Europe/London
-09:00–17:00
+09:00â€“17:00
 
-Mentors 8–10
+Mentors 8â€“10
 America/New_York
-09:00–17:00
+09:00â€“17:00
 ```
 #### Mentors are available Monday through Saturday.
 
@@ -492,11 +492,11 @@ Availability results can become stale immediately after they are returned.
 
 For example:
 ```text
-Parent A → sees slot available
-Parent B → sees slot available
+Parent A â†’ sees slot available
+Parent B â†’ sees slot available
 
-Parent A → books
-Parent B → books at almost the same time
+Parent A â†’ books
+Parent B â†’ books at almost the same time
 ```
 
 The booking operation therefore performs the final availability check inside a database transaction.
@@ -532,9 +532,9 @@ bookings.
 Therefore:
 ```text
 CONFIRMED
-   ↓
+   â†“
 CANCELLED
-   ↓
+   â†“
 Slot becomes available again
 ```
 
@@ -742,26 +742,26 @@ A dummy meeting link is generated instead of integrating with an external video 
 <br>
 
 # 18. Design Decisions
-#### • UTC as canonical time
+#### â€¢ UTC as canonical time
 All booking timestamps are stored in UTC to avoid ambiguity when working across timezones.
 
-#### • IANA timezones
+#### â€¢ IANA timezones
 
 IANA identifiers are stored instead of fixed UTC offsets so DST rules remain available.
 
-#### • Booking-time validation
+#### â€¢ Booking-time validation
 
 Availability is calculated for user experience, but booking performs the final availability check again.
 
-#### • Transactional mentor allocation
+#### â€¢ Transactional mentor allocation
 
 Mentor locking and booking creation occur within a database transaction to handle concurrent requests.
 
-#### • Confirmed-only conflict detection
+#### â€¢ Confirmed-only conflict detection
 
 Cancelled bookings should not consume capacity, so conflict and capacity calculations consider confirmed bookings only.
 
-#### • Simple layered architecture
+#### â€¢ Simple layered architecture
 
 The application uses controllers, services, and repositories instead of introducing unnecessary distributed infrastructure for an MVP of this size.
 
@@ -803,6 +803,7 @@ The implementation was tested for:
 
 The development transcript is included separately in:
 
-[TRANSCRIPT](https://github.com/YiVibro/codeyoung_assignemeet/blob/b2a920fdbac999bdfa0b559862f2272e7bdd8bc5/TRANSCRIPT.md)
+[TRANSCRIPT](TRANSCRIPT.md)
 
 The transcript records the actual development conversation and decisions rather than presenting a fabricated development history.
+
